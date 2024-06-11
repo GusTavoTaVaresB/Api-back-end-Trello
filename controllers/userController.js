@@ -1,33 +1,36 @@
-const Quadro = require('../models/Quadro');
+const User = require('../models/User');
 
-// @desc    Create A Quadro
+// @desc    Create A User
 // @access  Public
-exports.createQuadro = (req, res) => {
-  const newQuadro = new Quadro({
-    nome: req.body.nome,
-    descricao: req.body.descricao
+exports.createUser = (req, res) => {
+  const newUser = new User({
+    name: req.body.name,
+    password: req.body.password,
+    email: req.body.email,
+    priority: req.body.priority,
   });
 
-  newQuadro.save()
-    .then(quadro => res.json(quadro))
+  newUser.save()
+    .then(User => res.json(User))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Get All Quadros
+
+// @desc    Get All Users
 // @access  Public
-exports.getQuadros = (req, res) => {
-  Quadro.find()
-    .then(quadros => res.json(quadros))
+exports.getUsers = (req, res) => {
+  User.find()
+    .then(users => res.json(users))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Delete A Quadro
+// @desc    Delete A User
 // @access  Public
-exports.deleteQuadro = (req, res) => {
-    Quadro.findByIdAndDelete(req.params.id)
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+exports.deleteUser = (req, res) => {
+    User.findByIdAndDelete(req.params.id)
+      .then(user => {
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
         }
         res.json({ success: true });
       })
@@ -35,31 +38,31 @@ exports.deleteQuadro = (req, res) => {
   };
 
 
-// @desc    Update Quadros
+// @desc    Update Users
 // @access  Public
-exports.updateQuadro = (req, res) => {
+exports.updateUser = (req, res) => {
 
   const updates = req.body
-  Quadro.findByIdAndUpdate(req.params.id, updates, {new : true})
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+  User.findByIdAndUpdate(req.params.id, updates, {new : true})
+      .then(user => {
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
         }
         res.json({ success: true });
       })
       .catch(err => res.status(500).json({ error: err.message }));
   };
 
-// @desc    Get A Quadro By Id
+// @desc    Get A User By Id
 // @access  Public
-exports.getIdQuadro = (req, res) => {
+exports.getIdUser = (req, res) => {
 
-  Quadro.findById(req.params.id)
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+  User.findById(req.params.id)
+      .then(user => {
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
         }
-        res.json(quadro);
+        res.json(user);
       })
       .catch(err => res.status(500).json({ error: err.message }));
   };

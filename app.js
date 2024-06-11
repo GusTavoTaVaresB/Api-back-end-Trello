@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const quadroRoutes = require('./routes/quadroRoutes');
+const userRoutes = require('./routes/userRoutes');
+const checklistRoutes = require('./routes/checklistRoutes');
 
 const app = express();
 
@@ -11,5 +13,7 @@ app.use(bodyParser.json());
 
 // Usar as rotas do Quadro
 app.use('/api', quadroRoutes);
+app.use('/api', userRoutes);
+app.use('/api', checklistRoutes);
 
 module.exports = app;

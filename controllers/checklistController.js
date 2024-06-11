@@ -1,33 +1,33 @@
-const Quadro = require('../models/Quadro');
+const Checklist = require('../models/checklist');
 
-// @desc    Create A Quadro
+// @desc    Create A Checklist
 // @access  Public
-exports.createQuadro = (req, res) => {
-  const newQuadro = new Quadro({
-    nome: req.body.nome,
-    descricao: req.body.descricao
+exports.createChecklist = (req, res) => {
+  const newChecklist = new Checklist({
+    title: req.body.title,
+    task: req.body.task
   });
 
-  newQuadro.save()
-    .then(quadro => res.json(quadro))
+  newChecklist.save()
+    .then(checklist => res.json(checklist))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Get All Quadros
+// @desc    Get All Checklists
 // @access  Public
-exports.getQuadros = (req, res) => {
-  Quadro.find()
-    .then(quadros => res.json(quadros))
+exports.getChecklists = (req, res) => {
+    Checklist.find()
+    .then(checklist => res.json(checklist))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Delete A Quadro
+// @desc    Delete A Checklist
 // @access  Public
-exports.deleteQuadro = (req, res) => {
-    Quadro.findByIdAndDelete(req.params.id)
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+exports.deleteChecklist = (req, res) => {
+    Checklist.findByIdAndDelete(req.params.id)
+      .then(checklist => {
+        if (!checklist) {
+          return res.status(404).json({ error: 'Checklist not found' });
         }
         res.json({ success: true });
       })
@@ -35,31 +35,31 @@ exports.deleteQuadro = (req, res) => {
   };
 
 
-// @desc    Update Quadros
+// @desc    Update Checklist
 // @access  Public
-exports.updateQuadro = (req, res) => {
+exports.updateChecklist = (req, res) => {
 
   const updates = req.body
-  Quadro.findByIdAndUpdate(req.params.id, updates, {new : true})
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+  Checklist.findByIdAndUpdate(req.params.id, updates, {new : true})
+      .then(checklist => {
+        if (!checklist) {
+          return res.status(404).json({ error: 'Checklist not found' });
         }
         res.json({ success: true });
       })
       .catch(err => res.status(500).json({ error: err.message }));
   };
 
-// @desc    Get A Quadro By Id
+// @desc    Get A Checklist By Id
 // @access  Public
-exports.getIdQuadro = (req, res) => {
+exports.getIdChecklist = (req, res) => {
 
-  Quadro.findById(req.params.id)
-      .then(quadro => {
-        if (!quadro) {
-          return res.status(404).json({ error: 'Quadro not found' });
+  Checklist.findById(req.params.id)
+      .then(checklist => {
+        if (!checklist) {
+          return res.status(404).json({ error: 'Checklist not found' });
         }
-        res.json(quadro);
+        res.json(checklist);
       })
       .catch(err => res.status(500).json({ error: err.message }));
   };
