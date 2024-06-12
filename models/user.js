@@ -30,6 +30,13 @@ const UserSchema = new mongoose.Schema({
         index: true,
         nullok: false
     },
+
+    projeto: {
+        type: String,
+        required: true,
+        index: true,
+        nullok: false
+    },
 })
 
 const User = mongoose.model('user', UserSchema);
