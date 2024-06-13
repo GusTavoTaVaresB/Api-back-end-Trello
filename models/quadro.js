@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Quadro no banco de dados
 const quadroSchema = new mongoose.Schema({
     nome: { 
         type: String, 
