@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { createChecklist, getChecklists, getIdChecklist, deleteChecklist, updateChecklist } = require('../controllers/checklistController');
+const { 
+    createChecklist,
+    getChecklists, 
+    getIdChecklist, 
+    deleteChecklist, 
+    updateChecklist
+} = require('../controllers/checklistController');
 
 // POST /api/checklist
 router.post('/checklist', createChecklist);

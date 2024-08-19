@@ -15,11 +15,9 @@ const quadroSchema = new mongoose.Schema({
         nullok: false
     },
 
-    projeto: {
-        type: String,   
-        required: true,
-        index: true,
-        nullok: false
+    nome_projeto: {
+        type: mongoose.Schema.Types.ObjectId,
+    ref: 'projeto'
     },
 
 
