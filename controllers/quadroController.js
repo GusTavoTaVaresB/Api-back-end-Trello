@@ -1,7 +1,6 @@
 const Quadro = require('../models/Quadro');
 
-// @desc    Create A Quadro
-// @access  Public
+// criar quadro
 exports.createQuadro = (req, res) => {
   const newQuadro = new Quadro({
     nome: req.body.nome,
@@ -13,16 +12,14 @@ exports.createQuadro = (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Get All Quadros
-// @access  Public
+// get no quadros
 exports.getQuadros = (req, res) => {
   Quadro.find()
     .then(quadros => res.json(quadros))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Delete A Quadro
-// @access  Public
+// deletar quadros
 exports.deleteQuadro = (req, res) => {
     Quadro.findByIdAndDelete(req.params.id)
       .then(quadro => {
@@ -35,8 +32,7 @@ exports.deleteQuadro = (req, res) => {
   };
 
 
-// @desc    Update Quadros
-// @access  Public
+// atualizar quadros
 exports.updateQuadro = (req, res) => {
 
   const updates = req.body
@@ -50,8 +46,7 @@ exports.updateQuadro = (req, res) => {
       .catch(err => res.status(500).json({ error: err.message }));
   };
 
-// @desc    Get A Quadro By Id
-// @access  Public
+// get quadro por ID
 exports.getIdQuadro = (req, res) => {
 
   Quadro.findById(req.params.id)

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ADD_QUADRO, QUADRO_ERROR } from './types';
 
-// Add quadro
+// adicionar quadro
 export const addQuadro = (formData) => async (dispatch) => {
   try {
     const config = {
@@ -18,9 +18,6 @@ export const addQuadro = (formData) => async (dispatch) => {
       type: ADD_QUADRO,
       payload: res.data
     });
-
-    // Você pode adicionar mais ações aqui se necessário
-    // dispatch(getActivity());
 
   } catch (err) {
     dispatch({
@@ -48,7 +45,7 @@ export const getQuadros = () => async (dispatch) => {
     }
   };
 
-  // Delete quadro
+  // Deletar quadro
 export const deleteQuadro = (id) => async (dispatch) => {
     try {
       await axios.delete(`/api/quadros/${id}`);

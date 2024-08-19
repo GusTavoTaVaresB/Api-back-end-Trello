@@ -1,7 +1,6 @@
 const User = require('../models/User');
 
-// @desc    Create A User
-// @access  Public
+// criar usuário
 exports.createUser = (req, res) => {
   const newUser = new User({
     name: req.body.name,
@@ -16,16 +15,14 @@ exports.createUser = (req, res) => {
 };
 
 
-// @desc    Get All Users
-// @access  Public
+// get usuarios
 exports.getUsers = (req, res) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Delete A User
-// @access  Public
+// deletar usuarios
 exports.deleteUser = (req, res) => {
     User.findByIdAndDelete(req.params.id)
       .then(user => {
@@ -38,8 +35,7 @@ exports.deleteUser = (req, res) => {
   };
 
 
-// @desc    Update Users
-// @access  Public
+// atualizar usuarios
 exports.updateUser = (req, res) => {
 
   const updates = req.body
@@ -53,8 +49,7 @@ exports.updateUser = (req, res) => {
       .catch(err => res.status(500).json({ error: err.message }));
   };
 
-// @desc    Get A User By Id
-// @access  Public
+// get usuario por ID
 exports.getIdUser = (req, res) => {
 
   User.findById(req.params.id)

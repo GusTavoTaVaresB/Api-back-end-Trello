@@ -1,7 +1,6 @@
 const Checklist = require('../models/checklist');
 
-// @desc    Create A Checklist
-// @access  Public
+// criar checklist
 exports.createChecklist = (req, res) => {
   const newChecklist = new Checklist({
     title: req.body.title,
@@ -13,16 +12,14 @@ exports.createChecklist = (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Get All Checklists
-// @access  Public
+// get checklist
 exports.getChecklists = (req, res) => {
     Checklist.find()
     .then(checklist => res.json(checklist))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-// @desc    Delete A Checklist
-// @access  Public
+// deletar checklist
 exports.deleteChecklist = (req, res) => {
     Checklist.findByIdAndDelete(req.params.id)
       .then(checklist => {
@@ -35,8 +32,7 @@ exports.deleteChecklist = (req, res) => {
   };
 
 
-// @desc    Update Checklist
-// @access  Public
+// atualizar checklist
 exports.updateChecklist = (req, res) => {
 
   const updates = req.body
@@ -50,8 +46,7 @@ exports.updateChecklist = (req, res) => {
       .catch(err => res.status(500).json({ error: err.message }));
   };
 
-// @desc    Get A Checklist By Id
-// @access  Public
+// get checklist por ID
 exports.getIdChecklist = (req, res) => {
 
   Checklist.findById(req.params.id)
@@ -75,30 +70,3 @@ exports.getIdChecklist = (req, res) => {
 
 
 
-
-// const createQuadro = async (req, res) => {
-//     try {
-//         const { nome, descricao } = req.body;
-//         const newQuadro = new Quadro({ nome, descricao });
-//         await newQuadro.save();
-//         res.status(201).send(newQuadro);
-//     } catch (error) {
-//         res.status(400).send(error);
-//     }
-// };
-
-
-// // Método para obter todos os Quadros
-// const getQuadros = async (req, res) => {
-//     try {
-//         const quadros = await Quadro.find();
-//         res.status(200).send(boards);
-//     } catch (error) {
-//         res.status(400).send(error);
-//     }
-// };
-
-// module.exports = {
-//     createQuadro,
-//     getQuadros,
-// };
