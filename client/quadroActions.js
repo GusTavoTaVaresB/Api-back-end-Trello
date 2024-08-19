@@ -62,3 +62,19 @@ export const deleteQuadro = (id) => async (dispatch) => {
       });
     }
   };
+
+  // atualizar quadro
+  export const updateQuadro = (id, updates) => async (dispatch) => {
+    try {
+      const response = await axios.put(`/api/quadros/${id}`, updates);
+      dispatch({
+        type: UPDATE_QUADRO,
+        payload: response.data
+      });
+    } catch (err) {
+      dispatch({
+        type: UPDATE_QUADRO_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+      });
+    }
+  };
