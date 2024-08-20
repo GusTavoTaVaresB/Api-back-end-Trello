@@ -1,4 +1,4 @@
-const Quadro = require('../models/Quadro');
+const Quadro = require('../models/quadro');
 
 // criar quadro
 exports.createQuadro = (req, res) => {

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const {
-  createProject,
-  getAllProjects,
-  getProjectById,
-  addMemberToProject,
-  updateProject,
-  deleteProject,
+    createProject,
+    getAllProjects,
+    getProjectById,
+    addMemberToProject,
+    updateProject,
+    deleteProject,
 } = require('../controllers/projetoController');
 
 // POST /api/projetos
