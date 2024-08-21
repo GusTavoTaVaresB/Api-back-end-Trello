@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
         nullok: false
     },
 
-    projeto: {
+    nome_projeto: {
         type: String,
         required: true,
         index: true,
