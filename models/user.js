@@ -32,10 +32,8 @@ const UserSchema = new mongoose.Schema({
     },
 
     nome_projeto: {
-        type: String,
-        required: true,
-        index: true,
-        nullok: false
+        type: mongoose.Schema.Types.ObjectId,
+    ref: 'nome_projeto',
     },
 })
 
