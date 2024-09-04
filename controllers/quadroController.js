@@ -57,4 +57,4 @@ exports.getIdQuadro = (req, res) => {
         res.json(quadro);
       })
       .catch(err => res.status(500).json({ error: err.message }));
-  };
+  };z
