@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 
-const app = require('./app');
-const connectDB = require('./config/db');
+const app = require('../../app');
+const connectDB = require('../config/db');
 
 
 connectDB();
