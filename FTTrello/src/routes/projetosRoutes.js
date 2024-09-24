@@ -7,7 +7,7 @@ const {
     addMemberToProject,
     updateProject,
     deleteProject,
-} = require('../controllers/projetoController');
+} = require('../../controllers/projetoController');
 
 // POST /api/projetos
 router.post('/projetos', createProject);
