@@ -24,15 +24,6 @@ const connectDB = async () => {
 
 module.exports = connectDB;
 
-
-
-
-
-
-
-
-
-
 // // Função de conexão com o banco de dados MongoDB
 // async function connectToDatabase() {
 //     try {
