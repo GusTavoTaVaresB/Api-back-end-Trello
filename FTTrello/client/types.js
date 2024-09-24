@@ -1,0 +1,6 @@
+export const ADD_QUADRO = 'ADD_QUADRO';
+export const QUADRO_ERROR = 'QUADRO_ERROR';
+export const GET_QUADROS = 'GET_QUADROS';
+export const QUADROS_ERROR = 'QUADROS_ERROR';
+export const DELETE_QUADRO = 'DELETE_QUADRO';
+export const DELETE_QUADRO_ERROR = 'DELETE_QUADRO_ERROR';
