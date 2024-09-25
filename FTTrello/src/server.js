@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
+const quadroRoutes = require('../routes/quadroRoutes');
+const userRoutes = require('../routes/userRoutes');
+const checklistRoutes = require('../routes/checklistRoutes');
 
 
-<<<<<<< HEAD
-const app = require('../index');
-=======
-const app = require('../src/index');
->>>>>>> 54132492f018c431a40c3454f1bad290f68c2b51
-const connectDB = require('../config/db');
+const app = express();
 
 
-connectDB();
+app.use(bodyParser.json());
+// app.use(express.json({ extended: false }));
 
-const port = 3000;
+// Usar as rotas do Quadro
+app.use('/api', quadroRoutes);
+app.use('/api', userRoutes);
+app.use('/api', checklistRoutes);
 
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-});
+module.exports = app;
