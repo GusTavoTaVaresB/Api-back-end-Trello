@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const quadroRoutes = require('../routes/quadroRoutes');
 const userRoutes = require('../routes/userRoutes');
 const checklistRoutes = require('../routes/checklistRoutes');
-
-
 const app = express();
 
 
