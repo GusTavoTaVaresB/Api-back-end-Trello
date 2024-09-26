@@ -1,9 +1,9 @@
-const dotenv = require('dotenv').config(); // Carregue as variáveis de ambiente primeiro
+const dotenv = require('dotenv').config(); 
 const mongoose = require('mongoose');
 
 const mongoURI = process.env.MONGO_URI;
 
-console.log('Mongo URI:', mongoURI); // Log da URI para debug
+// console.log('Mongo URI:', mongoURI); // Log da URI se caso necessário
 
 const connectDB = async () => {
     try {
