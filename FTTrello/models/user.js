@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Tabela dos users no DB
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,

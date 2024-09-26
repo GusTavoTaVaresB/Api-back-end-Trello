@@ -6,3 +6,6 @@
 
 # Ignorar o arquivo .env
 /.env
+
+#Ignorar arquivo txt
+/npminstall.txt
