@@ -1,4 +1,0 @@
-npm i dotenv
-npm i express
-npm i mongodb
-npm i mongoose
