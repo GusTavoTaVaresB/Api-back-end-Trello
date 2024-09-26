@@ -6,7 +6,7 @@ const {
     getIdChecklist, 
     deleteChecklist, 
     updateChecklist
-} = require('../../controllers/checklistController');
+} = require('../controllers/checklistController');
 
 // POST /api/checklist
 router.post('/checklist', createChecklist);
