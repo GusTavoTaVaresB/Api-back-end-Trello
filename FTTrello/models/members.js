@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Tabela dos membros no DB
 const membrosSchema = new mongoose.Schema({
     name: {
         type: mongoose.Schema.Types.ObjectId,

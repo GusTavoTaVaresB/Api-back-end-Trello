@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Tabela das checklists no DB
 const ChecklistSchema = new mongoose.Schema({
     title: {
         type: String,
